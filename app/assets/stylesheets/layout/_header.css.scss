@@ -1,0 +1,16 @@
+header {
+  background: transparentize($color-black, 0.95);
+  border-bottom: 1px solid transparentize($color-white, 0.8);
+  width: 100%;
+  padding: 0.8em;
+  color: $color-white;
+  @include borderBox;
+  h1 {
+    float: left;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+ .user-nav { 
+    float: right;
+ } 
+}

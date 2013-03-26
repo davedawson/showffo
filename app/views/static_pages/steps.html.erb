@@ -1,0 +1,14 @@
+<h1>StaticPages#home</h1>
+<p>Find me in app/views/static_pages/home.html.erb</p>
+<p>Secret: <%= @token %></p>
+<p>Auth: <%= @auth %></p>
+<p>Body: <%= @body %></p>
+<p>Steps: <%= @steps %></p>
+
+<%= debug(@activity) %>
+<%= debug(@activity["summary"]["steps"]) %>
+
+
+<% @activity.each do |key, value| %> 
+  <%=h "#{key.to_s} #{value.to_s}" %> 
+<% end %> 
