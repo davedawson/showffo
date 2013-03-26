@@ -1,6 +1,11 @@
-<div class="steps">
-  <h1>
-    <%= @steps %>
-  </h1>
-  <h2>steps today</h2>
-</div>
+<% if signed_in? %>
+  
+  <%= render '/static_pages/steps' %>
+  
+<% else %>
+  
+  <%= render 'layouts/unauth_home' %>
+
+<% end %>
+
+

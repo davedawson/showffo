@@ -1,0 +1,10 @@
+<div class="steps">
+  <h1>
+    <%= @steps %>
+  </h1>
+  <h2>steps today</h2>
+</div>
+
+<% @activity.each do |key, value| %> 
+  <%=h "#{key.to_s} #{value.to_s}" %> 
+<% end %> 
