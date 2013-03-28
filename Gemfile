@@ -18,10 +18,8 @@ gem 'rabl'
 gem "multi_json", "~> 1.7.1"
 gem 'html5-rails'
 gem 'sass-rails'
-gem 'compass-h5bp'
 gem 'compass'
 gem 'compass-rails'
-
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -44,7 +42,6 @@ group :assets do
   gem 'handlebars_assets'
   gem 'sass-twitter-bootstrap-rails'
   gem 'jquery-rails'
-
 end
 
 group :test do
@@ -54,5 +51,4 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
-  gem 'compass-h5bp'
 end
