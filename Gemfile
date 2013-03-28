@@ -17,6 +17,8 @@ gem 'awesome_print'
 gem 'rabl'
 gem "multi_json", "~> 1.7.1"
 gem 'html5-rails'
+gem 'compass-h5bp'
+
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
@@ -41,7 +43,6 @@ group :assets do
   gem 'jquery-rails'
   gem 'compass'
   gem 'compass-rails'
-  gem 'compass-h5bp'
 end
 
 group :test do
