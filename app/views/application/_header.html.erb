@@ -1,22 +1,26 @@
 <header class="cf">
   <div class="wrap">
-    <h1>Showoff</h1>
     <div class="user-nav">
         <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <p>
+              <%= link_to 'Edit profile', edit_user_registration_path %> 
+            <span>&#8226;</span>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
+          <strong>Logged in as <%= current_user.email %></strong>
+        </p>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> |
-          <%= link_to "Login", new_user_session_path %>
-          <%= link_to "Sign in with Fitbit", user_omniauth_authorize_path(:fitbit) %>
-
+          <p>
+            <%= link_to "Sign up", new_user_registration_path %> |
+            <%= link_to "Login", new_user_session_path %>
+            <%= link_to "Sign in with Fitbit", user_omniauth_authorize_path(:fitbit) %>
+          </p>
         <% end %>
       </div>
-
-      <% flash.each do |name, msg| %>
+      <h1><a href="/">Showffo</a></h1>
+<!--       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
       <% end %>
+    -->
     </div>
   </div>
 </header>

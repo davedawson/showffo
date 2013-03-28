@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319210846) do
+ActiveRecord::Schema.define(:version => 20130328034535) do
+
+  create_table "challenges", :force => true do |t|
+    t.string   "task"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "fitbit_data", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -41,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130319210846) do
     t.string   "uid"
     t.string   "authtoken"
     t.string   "secrettoken"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

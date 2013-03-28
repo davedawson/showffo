@@ -48,4 +48,10 @@ a:hover, a:focus {
 a:link { 
 }
 
+input, select, textarea { 
+  @include textFieldClean; 
+}
 
+strong {
+  font-weight: 500;
+}

@@ -8,8 +8,10 @@
     <%= render "header" %>
 
     <div id="main" role="main">
-      <%= render "flashes" %>
-      <%= yield %>
+      <div class="wrap">
+        <%= render "flashes" %>
+        <%= yield %>
+      </div>
     </div>
 
     <%= render "footer" %>

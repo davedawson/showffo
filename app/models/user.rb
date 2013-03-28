@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
-  validates_presence_of :username
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :name
+  validates_presence_of :email
 
 	def self.new_with_session(params, session)
 	  if session["devise.user_attributes"]
@@ -41,5 +41,29 @@ class User < ActiveRecord::Base
 	    super
 	  end
 	end
+
+  def fitbit_client
+    raise "Account is not linked with a Fitbit account" unless linked?
+    return @fitbit_client if @fitbit_client
+
+    @fitbit_client = Fitgem::Client.new(
+      :consumer_key => "d4c64a56227a46a7950cf851f516748e",
+      :consumer_secret => "405f2b469313493da01215e1ae10e05e",
+      :token => current_user.authtoken,
+      :secret => current_user.secrettoken
+    )
+  end
+
+  def grab_data
+    @activity = @fitbit_client.activities_on_date(Date.today.to_s)
+  end
+
+  def setUser
+    user = User.find(params[:id])
+  end
+
+  def to_param
+    username
+  end
 
 end
