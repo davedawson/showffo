@@ -1,21 +1,22 @@
 <header class="cf">
   <div class="wrap">
-    <div class="user-nav">
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
+        <div class="user-nav auth">
           <p>
           <%= link_to 'Edit profile', edit_user_registration_path %> 
           <span>&#8226;</span>
           <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
           <strong>Logged in as <%= current_user.email %></strong>
         </p>
-        <% else %>
+      <% else %>
+      <div class="user-nav unauth">
           <p>
             <%= link_to "Sign up", new_user_registration_path %> 
             <span>&#8226;</span>
             <%= link_to "Login", new_user_session_path %>
             <%= link_to "Sign in with Fitbit", user_omniauth_authorize_path(:fitbit), :class => "button" %>
           </p>
-        <% end %>
+      <% end %>
       </div>
       <h1><a href="/">Showffo</a></h1>
 <!--       <% flash.each do |name, msg| %>

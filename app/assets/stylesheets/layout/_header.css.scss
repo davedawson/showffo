@@ -29,6 +29,9 @@ header {
     font-weight: 500;
     margin: 15px 20px 0 0;
     text-align: right;
+    &.unauth {
+      margin: 0px 20px 0 0;
+    }
     strong {
       display: block;
     }
@@ -37,7 +40,12 @@ header {
       color: transparentize($color-blue, 0.8);
     }
     a {
-    color: $color-blue;
-  }
+      color: $color-blue;
+    }
+    .button {
+      color: $color-white;
+      display: block;
+      margin-top: 5px;
+    }
  } 
 }
