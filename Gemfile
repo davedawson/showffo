@@ -17,7 +17,11 @@ gem 'awesome_print'
 gem 'rabl'
 gem "multi_json", "~> 1.7.1"
 gem 'html5-rails'
+gem 'sass-rails'
 gem 'compass-h5bp'
+gem 'compass'
+gem 'compass-rails'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -36,13 +40,11 @@ end
 # in production environments by default.
 group :assets do
   gem 'coffee-rails', '3.2.2'
-  gem 'sass-rails'
   gem 'uglifier'
   gem 'handlebars_assets'
   gem 'sass-twitter-bootstrap-rails'
   gem 'jquery-rails'
-  gem 'compass'
-  gem 'compass-rails'
+
 end
 
 group :test do

@@ -1,0 +1,14 @@
+<h2>What are you working towards?</h2>
+
+<%= form_for @challenges do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field"><%= f.label :task %><br />
+  <%= f.text_field :task %></div>
+  
+  <div class="field"><%= f.label :description %><br />
+  <%= f.text_field :description %></div>
+
+  <div class="field"><%= f.submit "Add Challenge", :class => "button" %></div>
+<% end %>
+<%= render "devise/shared/links" %>
