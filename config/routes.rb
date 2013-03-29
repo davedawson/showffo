@@ -1,16 +1,19 @@
 FitCompete::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   root to: 'static_pages#home'
-  
+  resources :challenges
 
   match '/help',   :to => 'static_pages#help'
+  match '/about',   :to => 'static_pages#about'
   match '/about',   :to => 'static_pages#about'
   get "static_pages/steps"
   get "static_pages/help"
   get '/users/:id', :to => "users#show", :as => :user
+  
   namespace :api do
     get "user", controller: "users", action: "show"
     get "body_measurements", controller: "body_measurements", action: "show"
+  
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

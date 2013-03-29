@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   def home
     if signed_in?
       # unless current_user.authtoken.blank?
-        @user = current_user
+        @user = current_user if signed_in?
         client = Fitgem::Client.new(
           :consumer_key => "d4c64a56227a46a7950cf851f516748e",
           :consumer_secret => "405f2b469313493da01215e1ae10e05e",

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :name
   validates_presence_of :email
+  has_many :challenges, dependent: :destroy
 
 	def self.new_with_session(params, session)
 	  if session["devise.user_attributes"]
