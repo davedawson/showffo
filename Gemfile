@@ -21,6 +21,7 @@ gem 'sass-rails'
 gem 'compass'
 gem 'compass-rails'
 gem 'compass-h5bp'
+gem 'unicorn'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
