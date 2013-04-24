@@ -8,7 +8,7 @@ class ChallengesController < ApplicationController
     @challenges = current_user.challenges.all
     @challenge = Challenge.find(params[:id])
     # @updates = @challenge.updates.all
-    # @update = @challenges.first.updates.build
+    @update = @challenges.first.updates.build
     # @challenges = current_user.challenges.all
     # @challenge = current_user.challenges.build(params[:challenge])
     
