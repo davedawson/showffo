@@ -25,10 +25,13 @@ header {
 
  .user-nav { 
     float: right;
-    font-size: 0.83em;
+    font-size: 14px;
     font-weight: 500;
     margin: 10px 20px 0 0;
     text-align: right;
+    p {
+      font-size: 14px;
+    }
     &.unauth {
       margin: 0px 20px 0 0;
     }

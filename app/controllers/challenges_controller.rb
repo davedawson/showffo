@@ -3,12 +3,13 @@ class ChallengesController < ApplicationController
   end
 
   def show 
-    # @user = User.find(params[:id])
+    @user = current_user
     # @challenges = @user.challenges.paginate(page: params[:page])
     @challenges = current_user.challenges.all
     @challenge = Challenge.find(params[:id])
     # @updates = @challenge.updates.all
-    @update = @challenges.first.updates.build
+    # @updates = @challenge.updates.build
+    # @update = @challenge.updates.build
     # @challenges = current_user.challenges.all
     # @challenge = current_user.challenges.build(params[:challenge])
     

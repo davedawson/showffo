@@ -1,11 +1,13 @@
-<h1><%= @user.name %> has <%= @user.challenges.count %> challenges going.</h1>
+<% provide(:title, 'Profile') %>
+<% provide(:class, 'profile') %>
+  <h1><%= @user.name %> has <%= @user.challenges.count %> challenges going.</h1>
 
-<ul>
-  <% @user.challenges.each do |challenge| %>
-    <li>
-      <h2><%= link_to challenge.task, :id => challenge.id, :controller => :challenges, :action => :show %></h2>
-      <p><%= challenge.description %></p>
-      <p>Posted <%= time_ago_in_words(challenge.created_at) %> ago.</p>
-    </li>
-  <% end %>
-</ul>
+  <ul class="challenges">
+    <% @user.challenges.each do |challenge| %>
+      <li class="card">
+        <h2><%= link_to challenge.task, :id => challenge.id, :controller => :challenges, :action => :show %></h2>
+        <p><%= challenge.description %></p>
+        <p>Posted <%= time_ago_in_words(challenge.created_at) %> ago.</p>
+      </li>
+    <% end %>
+  </ul>

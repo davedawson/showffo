@@ -1,4 +1,7 @@
 footer {
+  clear: both;
+  float: left;
+  width: 100%;
   background: darken($color-blue, 30%);
   margin-top: 10em;
   padding: 4em;

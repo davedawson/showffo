@@ -3,12 +3,12 @@
 <%= html_tag :class => "no-js" %>
   <%= render "head" %>
 
-  <body class="<%= controller.controller_name %>">
+  <body class="<%= controller.controller_name %> <%= page_class(yield(:class)) %>">
     <%= render "chromeframe" %>
     <%= render "header" %>
 
     <div id="main" role="main">
-      <div class="wrap">
+      <div class="container">
         <%= render "flashes" %>
         <%= yield %>
       </div>
@@ -18,6 +18,7 @@
 
     <%# Javascript at the bottom for fast page loading %>
     <%# render "javascripts" %>
+    <script src="https://get.gridsetapp.com/12380/overlay/"></script>
   </body>
 </html>
 
