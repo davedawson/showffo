@@ -18,6 +18,12 @@
   float: left;
   background: darken($color-blue, 30%);
   margin-right: 2.6008%;
+  padding: 2%;
+  border-top: 5px solid rgba(255,255,255,0.8);
+  @include borderBox;
+  h2 {
+    font-size: 36px;
+  }
 }
 .card:last-child {
   margin-right: 0;

@@ -3,7 +3,7 @@
 <ul>
 
     <li>
-      <h3 class="username"><%= @user.name %><h3>
+      <h3 class="username"><%= link_to @user.name, :id => @user.username, :controller => :users, :action => :show %><h3>
       <h1><%= @challenge.task %></a></h1>
       <p class="challenge-description"><%= @challenge.description %></p>
       <p>Posted <%= time_ago_in_words(@challenge.created_at) %> ago.</p>

@@ -7,4 +7,5 @@ footer {
   padding: 4em;
   text-align: center;
   color: transparentize($color-white, 0.6);
+  @include borderBox;
 }

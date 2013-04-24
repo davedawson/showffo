@@ -7,7 +7,6 @@
       <li class="card">
         <h2><%= link_to challenge.task, :id => challenge.id, :controller => :challenges, :action => :show %></h2>
         <p><%= challenge.description %></p>
-        <p>Posted <%= time_ago_in_words(challenge.created_at) %> ago.</p>
       </li>
     <% end %>
   </ul>
