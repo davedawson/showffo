@@ -20,4 +20,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def following
+    @title = "Following"
+    @user = User.find_by_username(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find_by_username(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
 end

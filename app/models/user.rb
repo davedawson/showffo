@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   has_many :challenges, dependent: :destroy
   has_many :updates, dependent: :destroy, :through => :challenges
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :reverse_relationships, foreign_key: "followed_id",
+                                   class_name:  "Relationship",
+                                   dependent:   :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
 
 	def self.new_with_session(params, session)
 	  if session["devise.user_attributes"]
@@ -66,6 +72,18 @@ class User < ActiveRecord::Base
 
   def to_param
     username
+  end
+
+  def following?(other_user)
+    relationships.find_by_followed_id(other_user.id)
+  end
+
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    relationships.find_by_followed_id(other_user.id).destroy
   end
 
 end

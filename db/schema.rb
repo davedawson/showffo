@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412195003) do
+ActiveRecord::Schema.define(:version => 20130424204734) do
 
   create_table "challenges", :force => true do |t|
     t.string   "task"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20130412195003) do
   create_table "fitbit_users", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "updates", :force => true do |t|
