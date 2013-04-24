@@ -19,11 +19,9 @@
           <div class="field"><%= f.submit "Add Challenge", :class => "button" %></div>
         <% end %>
       <% end %>
-      <% @challenge.updates.each do |update| %>
         <li>
-          <h2><%= update.content %></h2>
+          <h2><%= @update.content %></h2>
         </li>
-      <% end %>
     </li>
 </ul>
 
