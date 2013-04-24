@@ -3,8 +3,16 @@ class ChallengesController < ApplicationController
   end
 
   def show 
+    # @user = User.find(params[:id])
+    # @challenges = @user.challenges.paginate(page: params[:page])
     @challenges = current_user.challenges.all
-    @challenge = current_user.challenges.build
+    @challenge = Challenge.find(params[:id])
+    # @updates = @challenge.updates.all
+    # @update = @challenges.first.updates.build
+    # @challenges = current_user.challenges.all
+    # @challenge = current_user.challenges.build(params[:challenge])
+    
+    # @gift_list = current_user.gift_lists.build(params[:gift_list])
   end
 
   def new
@@ -21,4 +29,9 @@ class ChallengesController < ApplicationController
       render 'static_pages/home'
     end
   end
+
+  def update
+    
+  end
+
 end

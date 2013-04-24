@@ -1,1 +1,14 @@
-  <%= challenge.description %>
+<ul>
+
+    <li>
+      <h2><%= @challenge.task %></a></h2>
+      <p><%= @challenge.description %></p>
+      <p>Posted <%= time_ago_in_words(@challenge.created_at) %> ago.</p>
+      <% if current_user.updates.any? %>
+        <h3><%= @challenge.update.data %>123</h3>
+      <% end %>
+
+
+    </li>
+</ul>
+

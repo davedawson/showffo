@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def show 
     @user = User.find_by_username(params[:id])
-    
+    @challenges = @user.challenges.paginate(page: params[:page])
+
     unless @user.authtoken.blank?
       @users = User.paginate(page: params[:page])
       @fitbit_client = Fitgem::Client.new(

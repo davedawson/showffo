@@ -1,1 +1,29 @@
-TEST
+
+<h1><%= @user.name %> has <%= @user.challenges.count %> challenges going.</h1>
+
+<ul>
+  <% @user.challenges.each do |challenge| %>
+    <li>
+      <h2><a href=""><%= challenge.task %></a></h2>
+      <p><%= challenge.description %></p>
+      <p>Posted <%= time_ago_in_words(challenge.created_at) %> ago.</p>
+      <% if current_user.updates.any? %>
+        <h3><%= challenge.update.data %>123</h3>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <%= form_for(@update) do |f| %>
+          <%= f.hidden_field :user_id, :value => "test" %>
+          <div class="field"><%= f.label :content %><br />
+          <%= f.text_field :content %></div>
+          
+          <div class="field"><%= f.label :data %><br />
+          <%= f.text_field :data %></div>
+
+          <div class="field"><%= f.submit "Add Challenge", :class => "button" %></div>
+        <% end %>
+      <% end %>
+
+    </li>
+  <% end %>
+</ul>
