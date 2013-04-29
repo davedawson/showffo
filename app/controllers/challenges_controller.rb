@@ -35,4 +35,18 @@ class ChallengesController < ApplicationController
     
   end
 
+  def following
+    @title = "Following"
+    @challenge = User.find(params[:id])
+    @challenges = @challenge.challenged_users.paginate(page: params[:page])
+    render 'join'
+  end
+
+  def followers
+    @title = "Followers"
+    @challenge = User.find(params[:id])
+    @challenges = @challenge.challenged.paginate(page: params[:page])
+    render 'join'
+  end
+
 end

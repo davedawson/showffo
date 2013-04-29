@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
                                    class_name:  "Relationship",
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
+  has_many :competitors, foreign_key: "challenged_id", dependent: :destroy
+
 
 	def self.new_with_session(params, session)
 	  if session["devise.user_attributes"]
@@ -82,8 +84,12 @@ class User < ActiveRecord::Base
     relationships.create!(followed_id: other_user.id)
   end
 
-  def unfollow!(other_user)
-    relationships.find_by_followed_id(other_user.id).destroy
+  def competing?(challenges)
+    competitors.find_by_challenged_id(challenges.id)
+  end
+
+  def follow!(challenges)
+    competitors.create!(challenged_id: challenges.id)
   end
 
 end

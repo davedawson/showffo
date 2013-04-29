@@ -10,6 +10,25 @@
 
 
           <h2><%# @updates.content %></h2>
+  <%# @user ||= current_user %>
+<div class="stats">
+  <a href="<%# following_user_path(@user) %>">
+    <strong id="following" class="stat">
+      <%# @challenges.count %>
+      <%= @challenge.competitors.count %>
+    </strong>
+    competitors
+  </a>
+</div>
     </li>
 </ul>
 
+<%# unless current_user.username?(@user) %>
+  <div id="follow_form">
+  <% if current_user.competing?(@challenge) %>
+    <%= render 'leave' %>
+  <% else %>
+    <%= render 'join' %>
+  <% end %>
+  </div>
+<%# end %>

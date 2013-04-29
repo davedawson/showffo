@@ -1,0 +1,7 @@
+<%= form_for(@challenge.competitions.build(challenger_id: @challenge.id)) do |f| %>
+  <div><%= f.hidden_field :challenger_id %></div>
+  <%= f.submit "Join this challenge", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<%= @challenge.competitions.count %>
+<%= @challenge.id %>

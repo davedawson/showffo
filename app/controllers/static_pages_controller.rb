@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
         # @auth = current_user.authtoken
         @steps = @activity["summary"]["steps"]
       # end
-
+        @user_url = /users/#{@user.username}
   	end
     #	@parsed_json = JSON.parse(@activity)
   	#parsed_json[1]["distances"]["steps"]

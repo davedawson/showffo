@@ -1,0 +1,4 @@
+<%= form_for(@challenge.competitions.find(params[:id]),
+             html: { method: :delete }) do |f| %>
+  <%= f.submit "Leave this challenge", class: "btn btn-large" %>
+<% end %>
