@@ -3,7 +3,7 @@
   <h1><%= @user.name %> has <%= @user.challenges.count %> challenges going.</h1>
   <ul class="meta">
     <li><%# @user ||= current_user %><a href="<% following_user_path(@user) %>"><% @user.followed_users.count %> following</a></li>
-    <li><a href="<% followers_user_path(@user) %>"><% @user.followers.count %>followers</a></li>
+    <li><a href="<% followers_user_path(@user) %>"><% @user.followers.count %> followers</a></li>
     <li><%= render 'follow_form' if signed_in? %></li>
   </ul>
 

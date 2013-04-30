@@ -8,7 +8,7 @@
   <span>&#8226;</span>
   <li class="biking">Biking</li>
   <span>&#8226;</span>
-  <li><a class="stats" href="<%# following_user_path(@user) %>"><%= @challenge.competitors.count %> competitors</a></li>
+  <li><a class="stats" href="<%# following_user_path(@user) %>"><%= @challenge.competitions.count %> competitors</a></li>
   <li>
     <%# unless current_user.username?(@user) %>
       <div id="follow_form">
@@ -22,5 +22,5 @@
   </li>
 </ul>
 <ul class="updates">
-  
+
 </ul>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429000957) do
+ActiveRecord::Schema.define(:version => 20130430191538) do
 
   create_table "challenges", :force => true do |t|
     t.string   "task"
@@ -21,16 +21,16 @@ ActiveRecord::Schema.define(:version => 20130429000957) do
     t.integer  "user_id"
   end
 
-  create_table "competitors", :force => true do |t|
+  create_table "competitions", :force => true do |t|
     t.integer  "competitor_id"
     t.integer  "challenge_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "competitors", ["challenge_id"], :name => "index_competitors_on_challenge_id"
-  add_index "competitors", ["competitor_id", "challenge_id"], :name => "index_competitors_on_competitor_id_and_challenge_id", :unique => true
-  add_index "competitors", ["competitor_id"], :name => "index_competitors_on_competitor_id"
+  add_index "competitions", ["challenge_id"], :name => "index_competitors_on_challenge_id"
+  add_index "competitions", ["competitor_id", "challenge_id"], :name => "index_competitors_on_competitor_id_and_challenge_id", :unique => true
+  add_index "competitions", ["competitor_id"], :name => "index_competitors_on_competitor_id"
 
   create_table "fitbit_data", :force => true do |t|
     t.datetime "created_at", :null => false
