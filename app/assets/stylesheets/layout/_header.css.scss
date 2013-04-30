@@ -1,9 +1,9 @@
 header {
-  background: transparentize($color-white, 0.1);
+  background: $color-blue;
   //  border-bottom: 1px solid transparentize($color-black, 0.8);
   width: 100%;
   padding: 0 0.8em;
-  color: $color-blue;
+  color: $color-white;
   @include borderBox;
   
   h1 {
@@ -15,10 +15,10 @@ header {
     font-weight: 600;
     overflow: hidden;
     letter-spacing: 0.2em;
-    color: $color-blue;
-    a, a:visited {
-      color: darken($color-blue, 10%);
-      font-weight: 100;
+    color: $color-white;
+    a, a:visited, a:active {
+      color: $color-white;
+      font-weight: 400;
     }
   }
   
@@ -40,10 +40,10 @@ header {
     }
     span {
       margin: 0 10px;
-      color: transparentize($color-blue, 0.8);
+      color: transparentize($color-white, 0.8);
     }
     a {
-      color: $color-blue;
+      color: $color-white;
     }
     .button {
       color: $color-white;

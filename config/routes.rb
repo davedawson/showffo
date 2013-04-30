@@ -13,7 +13,7 @@ FitCompete::Application.routes.draw do
     end
   end
   resources :relationships, only: [:create, :destroy]
-  resources :competitions, only: [:create, :destroy]
+  resources :competitors, only: [:create, :destroy]
   
   match '/help',   :to => 'static_pages#help'
   match '/about',   :to => 'static_pages#about'
@@ -21,12 +21,13 @@ FitCompete::Application.routes.draw do
   get "static_pages/steps"
   get "static_pages/help"
   get '/users/:id', :to => "users#show", :as => :user
+  match '/profile', :to => "users#show", :as => :user
   
   namespace :api do
     get "user", controller: "users", action: "show"
     get "body_measurements", controller: "body_measurements", action: "show"
-  
   end
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

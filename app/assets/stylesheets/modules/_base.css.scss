@@ -3,6 +3,11 @@ body {
   font-weight: 400;
 }
 h1 {
+  font-size: 64px;
+  font-weight: 100;
+  color: $color-blue;
+  text-align: center;
+  margin: 2em 0 0;
 }
 h2 {
 }
@@ -38,8 +43,7 @@ li {
 blockquote {
 }
 a, a:active, a:visited {
-  color: $color-white; 
-  font-weight: bold;
+  color: $color-blue; 
   text-decoration: none;
 }
 a:hover, a:active {

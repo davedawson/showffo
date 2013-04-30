@@ -5,6 +5,9 @@ footer {
   background: darken($color-blue, 30%);
   padding: 4em;
   text-align: center;
+  margin-top: 10em;
   color: transparentize($color-white, 0.6);
   @include borderBox;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }

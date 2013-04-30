@@ -1,9 +1,13 @@
-.button, input[type=submit] {
+.button, a.button, input[type=submit] {
   padding: 0.7em 1.3em;
-  background: $color-dark-blue;
+  background: $color-blue;
   color: $color-white;
+  font-size: 14px;
   @include borderRadius;
   @include borderBox;
+}
+.button:hover, input[type=submit]:hover {
+  background: darken($color-blue, 10%)
 }
 #flash .wrapper .notice { 
   margin: 20px 0;
@@ -20,29 +24,42 @@
   margin-right: 2.6008%;
   padding: 2%;
   border-top: 5px solid rgba(255,255,255,0.8);
+  color: $color-white;
   @include borderBox;
   h2 {
     font-size: 36px;
+  }
+  a {
+    color: $color-white;
   }
 }
 .card:last-child {
   margin-right: 0;
 }
-
 .challenge {
-  #main {
-    h1 {
-      text-align: center;
-      font-size: 3em;
-      font-weight: 100;
-      margin: 0 0 .5em;
-    }
+  
+}
+.meta {
+  text-align: center;
+  li, li a, span {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color-grey;
+    display: inline;
+    letter-spacing: 0.2em;
+  }
+  li:after {
+    // content: "\003cspan\003e&#8226;\003cspan\003e";
+  }
+  span {
+    padding: 0 1em;
+  }
+  .button {
+    margin: 2em 1em;
   }
 }
-.username {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  margin: 2em 0 0;
+form {
+  width: 45%;
+  margin: 0 auto;
 }

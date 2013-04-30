@@ -1,8 +1,13 @@
 body {
-  background-color: $color-blue;
-  color: $color-white;
+  background-color: $color-white;
+  color: $color-blue;
 }
 .container { 
   max-width: 1000px;
   margin: 0 auto;
+}
+.interior {
+  #main {
+    margin: 5em 0;
+  }
 }

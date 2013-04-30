@@ -1,5 +1,5 @@
 class Competitor < ActiveRecord::Base
-  attr_accessible :challenger_id, :challenge_id
+  attr_accessible :competitor_id, :challenge_id
   
   belongs_to :competitor, class_name: "Challenger"
   belongs_to :challenge_id, class_name: "Challenge"

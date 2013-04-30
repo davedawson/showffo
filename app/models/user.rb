@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :name, :followed_id
   validates_presence_of :email
   has_many :challenges, dependent: :destroy
   has_many :updates, dependent: :destroy, :through => :challenges
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
                                    class_name:  "Relationship",
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
-  has_many :competitors, foreign_key: "challenged_id", dependent: :destroy
+  has_many :competitors, foreign_key: "competitor_id", dependent: :destroy
 
 
 	def self.new_with_session(params, session)
@@ -84,12 +84,12 @@ class User < ActiveRecord::Base
     relationships.create!(followed_id: other_user.id)
   end
 
-  def competing?(challenges)
-    competitors.find_by_challenged_id(challenges.id)
+  def follow!(challenges)
+    competitors.create!(competitor_id: challenges.id)
   end
 
-  def follow!(challenges)
-    competitors.create!(challenged_id: challenges.id)
+  def competing?(current_user)
+  #  competitors.find_by_competitor_id(current_user.id)
   end
 
 end
