@@ -1,4 +1,5 @@
-<%= form_for(@challenge.competitions.find(params[:id]),
+<%= form_for(@challenge.competitions.build(competitor_id: current_user.id),
              html: { method: :delete }) do |f| %>
   <%= f.submit "Leave this challenge", class: "button leave" %>
 <% end %>
+<%# button_to "Unfollow", competitions_path(competitions), :method => 'delete' %>

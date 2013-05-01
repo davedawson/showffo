@@ -12,7 +12,7 @@
   <li>
     <%# unless current_user.username?(@user) %>
       <div id="follow_form">
-      <% if current_user.competing?(@challenge) %>
+      <% if current_user.competing?(@user) %>
         <%= render 'leave' %>
       <% else %>
         <%= render 'join' %>

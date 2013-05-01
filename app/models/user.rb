@@ -92,4 +92,9 @@ class User < ActiveRecord::Base
     competitions.find_by_competitor_id(current_user.id)
   end
 
+  def uncompete!(current_user)
+    competitions.find_by_competitor_id(current_user).destroy
+  end
+
+
 end
